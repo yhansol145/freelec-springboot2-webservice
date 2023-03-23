@@ -1,5 +1,5 @@
 var main = {
-    init: function(){ debugger
+    init: function(){
         var _this = this;
         $('#btn-save').on('click', function(){
             _this.save();
@@ -9,7 +9,7 @@ var main = {
         })
     },
 
-    save: function(){ debugger
+    save: function(){
         var data = {
             title: $('#title').val(),
             author: $('#author').val(),
@@ -30,7 +30,7 @@ var main = {
         });
     },
 
-    update: function(){ debugger
+    update: function(){
         var data = {
             title: $('#title').val(),
             content: $('#content').val()
