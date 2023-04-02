@@ -5,6 +5,13 @@
         <div class="row">
             <div class="col-md-6">
                 <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+                {{#userName}} <!-- 머스태치는 if문을 제공하지 않고 true/false 여부만 판단한다. #: true , ^: false -->
+                    Logged in as: <span id="user">{{userName}}</span>
+                    <a href="/logout" class="btn btn-info active" role="button">Logout</a> <!-- 스프링 시큐리티에서 기본적으로 제공하는 로그아웃 URL -->
+                {{/userName}}
+                {{^userName}} <!-- userName이 없으면 로그인버튼 노출 -->
+                    <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a> <!-- 스프링 시큐리티에서 기본적으로 제공하는 로그인 URL -->
+                {{/userName}}
             </div>
         </div>
         <br>

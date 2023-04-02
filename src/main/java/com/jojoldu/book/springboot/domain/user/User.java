@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.management.relation.Role;
 import javax.persistence.*;
 
 @Getter
@@ -26,7 +25,7 @@ public class User extends BaseTimeEntity {
     @Column
     private String picture;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING) //JPA로 DB에 저장할때 Enum값을 지정한다. default: int
     @Column(nullable = false)
     private Role role;
 
@@ -46,7 +45,7 @@ public class User extends BaseTimeEntity {
     }
 
     public String getRoleKey() {
-        return this.role.getRoleName();
+        return this.role.getKey();
     }
 
 }
