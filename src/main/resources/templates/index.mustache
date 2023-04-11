@@ -11,6 +11,7 @@
                 {{/userName}}
                 {{^userName}} <!-- userName이 없으면 로그인버튼 노출 -->
                     <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a> <!-- 스프링 시큐리티에서 기본적으로 제공하는 로그인 URL -->
+                    <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a> <!-- 네이버로그인 URL은 application-oauth 에 등록한 redirect-uri값에 맞춰 자동으로 등록 -->
                 {{/userName}}
             </div>
         </div>
