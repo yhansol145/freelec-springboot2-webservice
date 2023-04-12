@@ -26,6 +26,9 @@ public class IndexController {
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
+        
+        //SessionUser user = (SessionUser) httpSession.getAttribute("user"); 
+        // > 이 코드를 계속해서 반복하게 만든다면 이후에 수정이나 개선이 필요할 때 모든 로직에 다시 선언해줘야한다. > @LoginUser 로 개선
 
         return "index";
     }
